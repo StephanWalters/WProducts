@@ -8,13 +8,17 @@
 import Foundation
 
 class PaginatedDataController: DataController {
-    var pageNumber = 1
-    var pageSize = 0
+    private var pageNumber = 1
+    var pageSize: UInt = 0
     
     override func getFullPath() -> String {
         let qualifiedPath = "\(self.path)/\(self.pageNumber)/\(self.pageSize)"
         
         return qualifiedPath
+    }
+    
+    func incrementPageNumber() {
+        self.pageNumber += 1
     }
 }
 
@@ -27,7 +31,6 @@ class DataController {
     var host = "https://mobile-tha-server.firebaseapp.com/"
     
     var urlString = ""
-    var response: DataResponse?
     var extractor: ExtractorProtocol?
     
     init(_ path: String) {

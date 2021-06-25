@@ -10,14 +10,27 @@ import Foundation
 class ProductsDataController: PaginatedDataController {
     
     var products = [Product]()
+    var response: ProductsDataResponse?
     
-    convenience init() {
+    convenience init(_ pageSize: UInt = 30) {
         self.init("walmartproducts")
-        self.pageSize = 30
+        
+        self.pageSize = pageSize
+        self.pageSize = pageSize <= 30 ? pageSize : 30
     }
     
     func isFirstItemOnPage(_ index: Int) -> Bool {
-        return index % self.pageSize == 0
+        return index % Int(self.pageSize) == 0
+    }
+    
+    func canLoadMore() -> Bool {
+        guard let response = self.response else { return false }
+        
+        /* The current pageNumber * pageSize equals the maximum number of products that have been loaded.
+         This is a max because a page may not be all the way full
+        */
+        let totalProductsLoadedMaximum = response.pageNumber * response.pageSize
+        return response.totalProducts > totalProductsLoadedMaximum
     }
 }
 
@@ -27,7 +40,7 @@ extension ProductsDataController: ExtractorProtocol {
         
         do {
             self.response = try decoder.decode(ProductsDataResponse.self, from: data)
-            guard let productResponse = self.response as? ProductsDataResponse, let products = productResponse.products else {
+            guard let response = self.response, let products = response.products else {
                 return false
             }
             

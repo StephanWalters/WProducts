@@ -40,8 +40,13 @@ extension BigPictureProductTableViewCell: ProductConfigurationProtocol {
         }
         
         // Set price
-        self.ratingLabel.text = product.price
+        self.priceLabel.text = product.price
         
+        if product.reviewCount > 0 {
+            self.ratingLabel.text = "\(product.reviewCount) Review(s)"
+        } else {
+            self.ratingLabel.text = nil
+        }
         // Set product image
         if let productImageUrl = product.productImage {
             

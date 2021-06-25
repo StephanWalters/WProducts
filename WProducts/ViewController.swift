@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     
     let controller = ProductsDataController()
@@ -22,7 +23,6 @@ class ViewController: UIViewController {
     }
     
     private func setup() {
-        
         self.tableView.register(UINib(nibName: ListProductTableViewCell.identifier,
                                       bundle: Bundle.main),
                                 forCellReuseIdentifier: ListProductTableViewCell.identifier)
@@ -36,11 +36,23 @@ class ViewController: UIViewController {
     }
     
     private func fetchContent() {
+        
+        // Start activity indicator
+        self.activityIndicator.startAnimating()
         self.controller.request { (success, error) in
+            
+            // stop activity indicator
+            self.activityIndicator.stopAnimating()
             if success {
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    private func loadMoreProductsIfNecessary() {
+        guard self.controller.canLoadMore() else { return }
+        self.controller.incrementPageNumber()
+        self.fetchContent()
     }
 }
 
@@ -68,6 +80,11 @@ extension ViewController: UITableViewDataSource {
         
         if let productCell = cell as? ProductConfigurationProtocol {
             productCell.configure(product)
+        }
+        
+        // Check if we are at the last product in the table view and load more products if necessary
+        if indexPath.row == self.controller.products.count - 1 {
+            self.loadMoreProductsIfNecessary()
         }
         
         return cell

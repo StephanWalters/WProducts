@@ -36,11 +36,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Veo-Yx-FBd">
+                                <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Veo-Yx-FBd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BEa-XR-hJu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7iK-B2-9Fh" secondAttribute="bottom" id="K2f-0h-TN6"/>
+                            <constraint firstItem="Veo-Yx-FBd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="R9a-Q2-DAh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7iK-B2-9Fh" secondAttribute="trailing" id="bxa-gO-fso"/>
                             <constraint firstItem="7iK-B2-9Fh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hsA-rC-MDl"/>
                             <constraint firstItem="7iK-B2-9Fh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nqv-vg-yyd"/>
@@ -48,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="WMart Products" id="kyU-Ta-PlX"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Veo-Yx-FBd" id="VLg-aa-pV7"/>
                         <outlet property="tableView" destination="7iK-B2-9Fh" id="MbZ-WM-vQ3"/>
                     </connections>
                 </viewController>

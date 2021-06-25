@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ListProductTableViewCell" rowHeight="201" id="vss-kk-5si" customClass="ListProductTableViewCell" customModule="WProducts" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="453" height="201"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vss-kk-5si" id="2Tr-S9-b4L">
+                <rect key="frame" x="0.0" y="0.0" width="453" height="201"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8F-Lw-wF4">
+                        <rect key="frame" x="16" y="45" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="T6O-u8-PdN"/>
+                            <constraint firstAttribute="height" constant="100" id="mbc-Hd-l8T"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Thx-aS-ZbV">
+                        <rect key="frame" x="16" y="16" width="421" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="ITa-OE-5wM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="51 Reviews" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ko2-8q-hCH">
+                        <rect key="frame" x="16" y="153" width="100" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="KMG-Ka-fec"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNY-7k-0pG">
+                        <rect key="frame" x="407" y="153" width="30" height="30"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="4NF-OW-wSW"/>
+                            <constraint firstAttribute="height" constant="30" id="hIc-6H-b3X"/>
+                        </constraints>
+                        <state key="normal" image="cart_icon"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mainstays, 18 Pack, 100% Cotton Waffle Discloths" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpY-d3-m21">
+                        <rect key="frame" x="124" y="45" width="293" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ko2-8q-hCH" firstAttribute="top" secondItem="C8F-Lw-wF4" secondAttribute="bottom" constant="8" id="0zO-IT-PFv"/>
+                    <constraint firstItem="JNY-7k-0pG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="dpY-d3-m21" secondAttribute="bottom" constant="8" id="3li-1a-QHJ"/>
+                    <constraint firstItem="C8F-Lw-wF4" firstAttribute="leading" secondItem="2Tr-S9-b4L" secondAttribute="leading" constant="16" id="401-Pp-Jgs"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="dpY-d3-m21" secondAttribute="trailing" constant="16" id="ABb-8t-k9n"/>
+                    <constraint firstItem="ko2-8q-hCH" firstAttribute="trailing" secondItem="C8F-Lw-wF4" secondAttribute="trailing" id="BTd-TM-tfS"/>
+                    <constraint firstItem="dpY-d3-m21" firstAttribute="leading" secondItem="C8F-Lw-wF4" secondAttribute="trailing" constant="8" symbolic="YES" id="E8J-t0-Bzd"/>
+                    <constraint firstItem="Thx-aS-ZbV" firstAttribute="leading" secondItem="2Tr-S9-b4L" secondAttribute="leading" constant="16" id="Ui1-S4-8Pa"/>
+                    <constraint firstAttribute="trailing" secondItem="Thx-aS-ZbV" secondAttribute="trailing" constant="16" id="ZI7-ps-ZtT"/>
+                    <constraint firstItem="C8F-Lw-wF4" firstAttribute="top" secondItem="Thx-aS-ZbV" secondAttribute="bottom" constant="8" id="foI-Wu-ppv"/>
+                    <constraint firstItem="ko2-8q-hCH" firstAttribute="leading" secondItem="C8F-Lw-wF4" secondAttribute="leading" id="g1V-hC-DrG"/>
+                    <constraint firstAttribute="trailing" secondItem="JNY-7k-0pG" secondAttribute="trailing" constant="16" id="n9A-5n-vfc"/>
+                    <constraint firstAttribute="bottom" secondItem="JNY-7k-0pG" secondAttribute="bottom" constant="18" id="wIJ-aA-bmY"/>
+                    <constraint firstItem="Thx-aS-ZbV" firstAttribute="top" secondItem="2Tr-S9-b4L" secondAttribute="top" constant="16" id="xbD-cO-uXl"/>
+                    <constraint firstItem="dpY-d3-m21" firstAttribute="top" secondItem="C8F-Lw-wF4" secondAttribute="top" id="y3V-TB-cuf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="addToCartButton" destination="JNY-7k-0pG" id="g0f-Ne-dhW"/>
+                <outlet property="descriptionLabel" destination="dpY-d3-m21" id="C5v-L1-PLA"/>
+                <outlet property="productImageView" destination="C8F-Lw-wF4" id="tbu-PK-7Zw"/>
+                <outlet property="ratingLabel" destination="ko2-8q-hCH" id="i5g-4q-FBg"/>
+                <outlet property="titleLabel" destination="Thx-aS-ZbV" id="bvj-VM-16n"/>
+            </connections>
+            <point key="canvasLocation" x="-447.10144927536237" y="-19.754464285714285"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="cart_icon" width="100" height="100"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

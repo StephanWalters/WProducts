@@ -55,16 +55,75 @@
                     <connections>
                         <outlet property="activityIndicator" destination="Veo-Yx-FBd" id="VLg-aa-pV7"/>
                         <outlet property="tableView" destination="7iK-B2-9Fh" id="MbZ-WM-vQ3"/>
+                        <segue destination="902-Wh-BJP" kind="show" identifier="ViewToProductDetail" id="IlZ-h5-8fO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="58" y="93"/>
         </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="pOO-So-vFZ">
+            <objects>
+                <viewController id="902-Wh-BJP" customClass="ProductDetailViewController" customModule="WProducts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ead-c5-cg2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M11-Ru-M11">
+                                <rect key="frame" x="0.0" y="88" width="414" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M11-Ru-M11" secondAttribute="height" multiplier="16:9" id="ciH-mI-BxU"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qym-Ao-riN">
+                                <rect key="frame" x="0.0" y="321" width="414" height="475"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-yo-Sbt">
+                                <rect key="frame" x="20" y="804" width="374" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="XnY-JU-Hf3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
+                                <state key="normal" title="Add To Cart"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="7YV-uF-nuq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nBs-yo-Sbt" firstAttribute="top" secondItem="Qym-Ao-riN" secondAttribute="bottom" constant="8" id="Hdt-h6-kzF"/>
+                            <constraint firstItem="7YV-uF-nuq" firstAttribute="trailing" secondItem="Qym-Ao-riN" secondAttribute="trailing" id="KXV-mT-2ib"/>
+                            <constraint firstItem="nBs-yo-Sbt" firstAttribute="leading" secondItem="7YV-uF-nuq" secondAttribute="leading" constant="20" id="Kuy-vV-YOV"/>
+                            <constraint firstItem="7YV-uF-nuq" firstAttribute="trailing" secondItem="M11-Ru-M11" secondAttribute="trailing" id="M4y-dR-i2x"/>
+                            <constraint firstItem="Qym-Ao-riN" firstAttribute="leading" secondItem="7YV-uF-nuq" secondAttribute="leading" id="NXv-eV-Y7e"/>
+                            <constraint firstItem="7YV-uF-nuq" firstAttribute="trailing" secondItem="nBs-yo-Sbt" secondAttribute="trailing" constant="20" id="RaS-QW-HDl"/>
+                            <constraint firstItem="M11-Ru-M11" firstAttribute="leading" secondItem="7YV-uF-nuq" secondAttribute="leading" id="W6n-De-fgW"/>
+                            <constraint firstItem="7YV-uF-nuq" firstAttribute="bottom" secondItem="Qym-Ao-riN" secondAttribute="bottom" priority="750" constant="20" id="ZHh-R0-hED"/>
+                            <constraint firstItem="Qym-Ao-riN" firstAttribute="top" secondItem="M11-Ru-M11" secondAttribute="bottom" id="diE-Vb-Cgs"/>
+                            <constraint firstItem="M11-Ru-M11" firstAttribute="top" secondItem="7YV-uF-nuq" secondAttribute="top" id="kTL-zQ-eWp"/>
+                            <constraint firstItem="7YV-uF-nuq" firstAttribute="bottom" secondItem="nBs-yo-Sbt" secondAttribute="bottom" constant="8" id="ofB-Tg-14z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="b7O-SY-y8X"/>
+                    <connections>
+                        <outlet property="addToCartButton" destination="nBs-yo-Sbt" id="xSP-AN-AqN"/>
+                        <outlet property="productImageView" destination="M11-Ru-M11" id="vns-bc-c2m"/>
+                        <outlet property="tableView" destination="Qym-Ao-riN" id="qYB-Y4-isV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E9U-PJ-Ecw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="92"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

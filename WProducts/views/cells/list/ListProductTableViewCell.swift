@@ -48,7 +48,7 @@ extension ListProductTableViewCell: ProductConfigurationProtocol {
         if let productImageUrl = product.productImage {
             
             let controller = ImageDataController(productImageUrl)
-            controller.getImage(for: productImageUrl) { (image) in
+            controller.getImage { (image) in
                 self.productImageView.image = image ?? UIImage(named: "Default Product Image")
             }
         }

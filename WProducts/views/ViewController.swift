@@ -54,12 +54,26 @@ class ViewController: UIViewController {
         self.controller.incrementPageNumber()
         self.fetchContent()
     }
+    
+    // MARK: - UISegue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ViewToProductDetail",
+           let vc = segue.destination as? ProductDetailViewController,
+           let product = sender as? Product {
+            vc.product = product
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return self.controller.isFirstItemOnPage(indexPath.row) ? 300 : 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let product = self.controller.products[indexPath.row]
+        self.performSegue(withIdentifier: "ViewToProductDetail", sender: product)
     }
 }
 

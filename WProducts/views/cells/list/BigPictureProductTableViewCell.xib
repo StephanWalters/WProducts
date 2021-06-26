@@ -53,7 +53,7 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-Eb-Q1l">
-                        <rect key="frame" x="281" y="8" width="30" height="30"/>
+                        <rect key="frame" x="273" y="8" width="30" height="30"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="LdO-8X-XNc"/>
@@ -94,7 +94,7 @@
                     <constraint firstItem="Lg1-0s-m7V" firstAttribute="top" secondItem="VjN-Gl-0Hu" secondAttribute="bottom" id="74J-gW-FDI"/>
                     <constraint firstItem="VjN-Gl-0Hu" firstAttribute="top" secondItem="HAs-EV-DPf" secondAttribute="top" id="Go0-oe-grf"/>
                     <constraint firstItem="Lg1-0s-m7V" firstAttribute="top" secondItem="z6N-V8-3lT" secondAttribute="bottom" id="Qxr-vF-f0n"/>
-                    <constraint firstAttribute="trailing" secondItem="zHr-Eb-Q1l" secondAttribute="trailing" constant="8" id="aFl-WO-Yvd"/>
+                    <constraint firstAttribute="trailing" secondItem="zHr-Eb-Q1l" secondAttribute="trailing" constant="16" id="aFl-WO-Yvd"/>
                     <constraint firstItem="zHr-Eb-Q1l" firstAttribute="top" secondItem="HAs-EV-DPf" secondAttribute="top" constant="8" id="fBW-LP-l8p"/>
                     <constraint firstItem="z6N-V8-3lT" firstAttribute="leading" secondItem="HAs-EV-DPf" secondAttribute="leading" id="h3Q-1q-DsB"/>
                     <constraint firstAttribute="bottom" secondItem="Lg1-0s-m7V" secondAttribute="bottom" id="om4-k3-mwh"/>

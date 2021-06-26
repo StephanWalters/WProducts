@@ -18,15 +18,14 @@ class ImageDataController: DataController {
     
     let cache = ImageDataCache.shared.cache
     
-    func getImage(for key: String, completion: @escaping (UIImage?) -> Void) {
-        let cachePath = key as NSString
+    func getImage(_ completion: @escaping (UIImage?) -> Void) {
+        let path = self.path as NSString
         
-        guard let image = self.cache.object(forKey: cachePath) else {
-            self.path = key
+        guard let image = self.cache.object(forKey: path) else {
             
             self.request { (success, error) in
                 if success {
-                    completion(self.cache.object(forKey: cachePath))
+                    completion(self.cache.object(forKey: path))
                 } else {
                     completion(nil)
                 }

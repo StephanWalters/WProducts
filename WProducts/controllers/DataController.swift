@@ -30,7 +30,6 @@ class DataController {
     var path = ""
     var host = "https://mobile-tha-server.firebaseapp.com/"
     
-    var urlString = ""
     var extractor: ExtractorProtocol?
     
     init(_ path: String) {

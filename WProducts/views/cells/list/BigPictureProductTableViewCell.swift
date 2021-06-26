@@ -48,10 +48,8 @@ extension BigPictureProductTableViewCell: ProductConfigurationProtocol {
             self.ratingLabel.text = nil
         }
         // Set product image
-        if let productImageUrl = product.productImage {
-            
-            let controller = ImageDataController(productImageUrl)
-            controller.getImage { (image) in
+        if let productImage = product.productImage {
+            ImageDataController.shared.getImage(for: productImage) { (image) in
                 self.productImageView.image = image ?? UIImage(named: "Default Product Image")
             }
         }

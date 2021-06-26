@@ -8,24 +8,24 @@
 import Foundation
 import UIKit
 
-// Image cache singleton to cache product images
-class ImageDataCache {
-    static let shared = ImageDataCache()
-    let cache = NSCache<NSString, UIImage>()
-}
-
 class ImageDataController: DataController {
     
-    let cache = ImageDataCache.shared.cache
+    convenience init() {
+        self.init("")
+    }
     
-    func getImage(_ completion: @escaping (UIImage?) -> Void) {
-        let path = self.path as NSString
+    static let shared = ImageDataController()
+    
+    let cache = NSCache<NSString, UIImage>()
+    func getImage(for key: String, completion: @escaping (UIImage?) -> Void) {
+        let path = key as NSString
         
         guard let image = self.cache.object(forKey: path) else {
-            
-            self.request { (success, error) in
-                if success {
-                    completion(self.cache.object(forKey: path))
+            self.path = key
+            self.request { (data, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    self.set(image, for: path)
+                    completion(image)
                 } else {
                     completion(nil)
                 }
@@ -47,10 +47,6 @@ class ImageDataController: DataController {
 
 extension ImageDataController: ExtractorProtocol {
     func extract(_ data: Data) -> Bool {
-
-        guard let image = UIImage(data: data) else { return false }
-
-        self.set(image, for: self.path as NSString)
         return true
     }
 }

@@ -51,8 +51,8 @@ class ProductDetailViewController: UIViewController {
     
     func setProductImage() {
         guard let productImage = self.product.productImage else { return }
-        let controller = ImageDataController(productImage)
-        controller.getImage { image in
+        
+        ImageDataController.shared.getImage(for: productImage) { (image) in
             self.productImageView.image = image ?? UIImage(named: "Default Product Image")
         }
         

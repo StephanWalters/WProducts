@@ -45,10 +45,9 @@ extension ListProductTableViewCell: ProductConfigurationProtocol {
         self.ratingLabel.text = product.price
         
         // Set product image
-        if let productImageUrl = product.productImage {
+        if let productImage = product.productImage {
             
-            let controller = ImageDataController(productImageUrl)
-            controller.getImage { (image) in
+            ImageDataController.shared.getImage(for: productImage) { (image) in
                 self.productImageView.image = image ?? UIImage(named: "Default Product Image")
             }
         }

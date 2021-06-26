@@ -42,12 +42,12 @@ class DataController {
         self.extractor = extractor
     }
     
-    func request(_ completion: @escaping ((Bool, Error?) -> Void)) {
+    func request(_ completion: @escaping ((Data?, Error?) -> Void)) {
         let session = URLSession.shared
         let requestUrl = "\(self.host)\(getFullPath())"
         
         guard let url = URL(string: requestUrl) else {
-            completion(false, nil)
+            completion(nil, nil)
             return
         }
         
@@ -55,11 +55,11 @@ class DataController {
             
             // Dispatch completion of data task on main thread
             DispatchQueue.main.async {
-                guard let data = data, let success = self.extractor?.extract(data) else {
-                    completion(false, error)
+                guard let data = data, self.extractor?.extract(data) == true else {
+                    completion(nil, error)
                     return
                 }
-                completion(success, nil)
+                completion(data, nil)
             }
         }.resume()
     }

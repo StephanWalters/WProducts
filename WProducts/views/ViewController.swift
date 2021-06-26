@@ -39,11 +39,11 @@ class ViewController: UIViewController {
         
         // Start activity indicator
         self.activityIndicator.startAnimating()
-        self.controller.request { (success, error) in
+        self.controller.request { (data, error) in
             
             // stop activity indicator
             self.activityIndicator.stopAnimating()
-            if success {
+            if data != nil {
                 self.tableView.reloadData()
             }
         }

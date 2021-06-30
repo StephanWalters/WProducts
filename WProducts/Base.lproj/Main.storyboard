@@ -47,6 +47,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My List" id="xgj-2F-WTW"/>
+                    <connections>
+                        <outlet property="tableView" destination="HAd-kN-efz" id="WnH-fG-GCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAd-jc-IkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

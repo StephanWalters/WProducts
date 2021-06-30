@@ -52,7 +52,7 @@
                             <constraint firstAttribute="width" secondItem="VjN-Gl-0Hu" secondAttribute="height" multiplier="16:9" id="3Qq-8E-ghF"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-Eb-Q1l">
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-Eb-Q1l">
                         <rect key="frame" x="259" y="8" width="44" height="44"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
@@ -60,7 +60,7 @@
                             <constraint firstAttribute="height" constant="44" id="rOn-0Z-efF"/>
                         </constraints>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <state key="normal" image="star" catalog="system">
+                        <state key="normal" image="gift.circle.fill" catalog="system">
                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                         </state>
                     </button>
@@ -117,7 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="gift.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -75,6 +75,43 @@ extension ViewController: UITableViewDelegate {
         let product = self.controller.products[indexPath.row]
         self.performSegue(withIdentifier: "ViewToProductDetail", sender: product)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let product = self.controller.products[indexPath.row]
+        
+        // Only allow sharing if a product iamge url exists
+        guard let imageUrl = product.productImage else { return nil }
+        
+        let shareAction = UIContextualAction(style: .normal, title: "Share") { (action, view, completion) in
+            
+            self.activityIndicator.startAnimating()
+            ImageDataController.shared.getImage(for: imageUrl) { (image) in
+                var shareItems = [Any]()
+                
+                // Add Text
+                let shareText = "Hey! Check out this \(product.productName) at Walmart!"
+                shareItems.append(shareText)
+                
+                // Ad Image if applicable
+                if let image = image {
+                    shareItems.append(image)
+                }
+                
+                let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+                
+                controller.popoverPresentationController?.sourceView = self.view
+                self.present(controller, animated: true, completion: {
+                    self.activityIndicator.stopAnimating()
+                })
+            }
+            
+            completion(true)
+        }
+        
+        shareAction.backgroundColor = .blue
+        return UISwipeActionsConfiguration(actions: [shareAction])
+    }
 }
 
 // MARK: - UITableViewDataSource

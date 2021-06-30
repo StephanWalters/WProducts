@@ -24,6 +24,34 @@
             </objects>
             <point key="canvasLocation" x="-761" y="92"/>
         </scene>
+        <!--My List-->
+        <scene sceneID="gkM-Qa-Ucq">
+            <objects>
+                <viewController id="36p-Cw-xhL" customClass="SavedListViewController" customModule="WProducts" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bvm-ez-6Qm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HAd-kN-efz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jUa-63-j84"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HAd-kN-efz" firstAttribute="leading" secondItem="jUa-63-j84" secondAttribute="leading" id="9fe-pT-Phf"/>
+                            <constraint firstItem="jUa-63-j84" firstAttribute="bottom" secondItem="HAd-kN-efz" secondAttribute="bottom" id="Tvo-hZ-3Yz"/>
+                            <constraint firstItem="HAd-kN-efz" firstAttribute="top" secondItem="jUa-63-j84" secondAttribute="top" id="YhW-ha-kCW"/>
+                            <constraint firstItem="jUa-63-j84" firstAttribute="trailing" secondItem="HAd-kN-efz" secondAttribute="trailing" id="t21-VY-8Sj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="My List" id="xgj-2F-WTW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dAd-jc-IkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="828" y="-577"/>
+        </scene>
         <!--WMart Products-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -51,11 +79,18 @@
                             <constraint firstItem="7iK-B2-9Fh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nqv-vg-yyd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="WMart Products" id="kyU-Ta-PlX"/>
+                    <navigationItem key="navigationItem" title="WMart Products" id="kyU-Ta-PlX">
+                        <barButtonItem key="rightBarButtonItem" image="list.dash" catalog="system" id="vBs-O3-ecs">
+                            <connections>
+                                <action selector="listBarItemPressed:" destination="BYZ-38-t0r" id="MNJ-5c-74K"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="Veo-Yx-FBd" id="VLg-aa-pV7"/>
                         <outlet property="tableView" destination="7iK-B2-9Fh" id="MbZ-WM-vQ3"/>
                         <segue destination="902-Wh-BJP" kind="show" identifier="ViewToProductDetail" id="IlZ-h5-8fO"/>
+                        <segue destination="36p-Cw-xhL" kind="show" identifier="ViewToSavedList" id="ONc-4V-jOM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -91,6 +126,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="17"/>
                                 <state key="normal" title="Save To List"/>
+                                <connections>
+                                    <action selector="saveToListButtonPressed:" destination="902-Wh-BJP" eventType="touchUpInside" id="eEz-tu-9OA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7YV-uF-nuq"/>
@@ -131,6 +169,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

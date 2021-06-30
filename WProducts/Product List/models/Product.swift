@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Product: Codable {
+class Product: NSObject, Codable, NSCoding {
     let productId: String
     let productName : String
     var shortDescription : String?
@@ -22,4 +22,17 @@ class Product: Codable {
         self.productId = productId
         self.productName = productName
     }
+    
+    func encode(with coder: NSCoder) {
+        coder.encode(self.productId, forKey: "productId")
+    }
+    
+    required convenience init?(coder: NSCoder) {
+        guard let productId = coder.decodeObject(forKey: "productId") as? String,
+              let productName = coder.decodeObject(forKey: "productName") as? String else { return nil }
+        
+        
+        self.init(productId, productName: productName)
+    }
 }
+

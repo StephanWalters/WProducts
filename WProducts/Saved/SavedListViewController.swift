@@ -9,6 +9,5 @@ import Foundation
 import UIKit
 
 class SavedListViewController: UIViewController {
-    let products = SavedProducts()
     
 }

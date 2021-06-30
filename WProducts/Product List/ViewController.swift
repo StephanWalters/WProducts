@@ -55,6 +55,11 @@ class ViewController: UIViewController {
         self.fetchContent()
     }
     
+    @IBAction func listBarItemPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "ViewToSavedList", sender: nil)
+    }
+    
+    
     // MARK: - UISegue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ViewToProductDetail",

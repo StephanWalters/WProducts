@@ -59,7 +59,8 @@
                             <constraint firstAttribute="width" constant="44" id="LdO-8X-XNc"/>
                             <constraint firstAttribute="height" constant="44" id="rOn-0Z-efF"/>
                         </constraints>
-                        <state key="normal" title="Add To Cart" image="cart_icon">
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="star" catalog="system">
                             <color key="titleColor" systemColor="systemBackgroundColor"/>
                         </state>
                     </button>
@@ -116,7 +117,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="cart_icon" width="100" height="100"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

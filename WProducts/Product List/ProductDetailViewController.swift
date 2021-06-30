@@ -37,6 +37,17 @@ class ProductDetailViewController: UIViewController {
         
         self.addToCartButton.layer.cornerRadius = 10
         self.addToCartButton.isHidden = !self.product.inStock
+
+    }
+    
+    func configureListButton() {
+        if SavedProductsController.shared.isSaved(productId: product.productId) {
+            self.addToCartButton.backgroundColor = .systemRed
+            self.addToCartButton.setTitle("Remove From List", for: [])
+        } else {
+            self.addToCartButton.backgroundColor = .systemGreen
+            self.addToCartButton.setTitle("Save To List", for: [])
+        }
     }
     
     func setup() {
@@ -48,6 +59,7 @@ class ProductDetailViewController: UIViewController {
         for info in self.productInfo {
             self.tableView.register(UINib(nibName: info.rawValue, bundle: Bundle.main), forCellReuseIdentifier: info.rawValue)
         }
+        self.configureListButton()
     }
     
     func setProductImage() {
@@ -58,6 +70,19 @@ class ProductDetailViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func saveToListButtonPressed(_ sender: Any) {
+        if SavedProductsController.shared.isSaved(productId: product.productId) {
+            // Remove Product
+            SavedProductsController.shared.remove(self.product.productId)
+        } else {
+            // Save Product
+            SavedProductsController.shared.add(self.product)
+        }
+        
+        self.configureListButton()
+    }
+    
     
     @IBAction func shareProduct(_ sender: Any) {
         guard let imageUrl = self.product.productImage else { return }

@@ -49,6 +49,7 @@
                     <navigationItem key="navigationItem" title="My List" id="xgj-2F-WTW"/>
                     <connections>
                         <outlet property="tableView" destination="HAd-kN-efz" id="WnH-fG-GCU"/>
+                        <segue destination="902-Wh-BJP" kind="show" identifier="SavedListToProductDetail" id="S43-tP-kZ3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dAd-jc-IkD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -168,9 +169,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E9U-PJ-Ecw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="828" y="92"/>
+            <point key="canvasLocation" x="1581" y="68"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="S43-tP-kZ3"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>

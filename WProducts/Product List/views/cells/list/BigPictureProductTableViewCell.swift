@@ -17,17 +17,21 @@ class BigPictureProductTableViewCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var instockButton: UIButton!
+    
+    var productId: String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addToCartButton.layer.cornerRadius = 10
+        self.instockButton.layer.cornerRadius = 10
     }
 }
 
 
 extension BigPictureProductTableViewCell: ProductConfigurationProtocol {
     func configure(_ product: Product) {
+        
+        self.productId = product.productId
         
         // Set title
         self.titleLabel.text = product.productName
@@ -55,6 +59,6 @@ extension BigPictureProductTableViewCell: ProductConfigurationProtocol {
         }
         
         // Set In stock
-        self.addToCartButton.isHidden = !product.inStock
+        self.instockButton.isHidden = !product.inStock
     }
 }

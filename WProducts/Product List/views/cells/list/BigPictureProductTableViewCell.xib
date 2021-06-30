@@ -53,11 +53,11 @@
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zHr-Eb-Q1l">
-                        <rect key="frame" x="273" y="8" width="30" height="30"/>
+                        <rect key="frame" x="259" y="8" width="44" height="44"/>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="30" id="LdO-8X-XNc"/>
-                            <constraint firstAttribute="height" constant="30" id="rOn-0Z-efF"/>
+                            <constraint firstAttribute="width" constant="44" id="LdO-8X-XNc"/>
+                            <constraint firstAttribute="height" constant="44" id="rOn-0Z-efF"/>
                         </constraints>
                         <state key="normal" title="Add To Cart" image="cart_icon">
                             <color key="titleColor" systemColor="systemBackgroundColor"/>
@@ -105,8 +105,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="addToCartButton" destination="zHr-Eb-Q1l" id="D1p-2t-Xw2"/>
                 <outlet property="descriptionLabel" destination="mLl-lb-Xas" id="WyG-TV-Glj"/>
+                <outlet property="instockButton" destination="zHr-Eb-Q1l" id="w7y-Oa-xVJ"/>
                 <outlet property="priceLabel" destination="eCN-of-dRv" id="j0T-u9-RoR"/>
                 <outlet property="productImageView" destination="VjN-Gl-0Hu" id="eg6-DX-YC5"/>
                 <outlet property="ratingLabel" destination="B8y-Gg-WtZ" id="QVf-iW-CyC"/>

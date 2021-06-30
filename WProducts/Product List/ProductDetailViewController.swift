@@ -25,6 +25,7 @@ class ProductDetailViewController: UIViewController {
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +57,32 @@ class ProductDetailViewController: UIViewController {
             self.productImageView.image = image ?? UIImage(named: "Default Product Image")
         }
         
+    }
+    
+    @IBAction func shareProduct(_ sender: Any) {
+        guard let imageUrl = self.product.productImage else { return }
+        
+        self.activityIndicator.startAnimating()
+        
+        ImageDataController.shared.getImage(for: imageUrl) { (image) in
+            var shareItems = [Any]()
+            
+            // Add Text
+            let shareText = "Hey! Check out this \(self.product.productName) at Walmart!"
+            shareItems.append(shareText)
+            
+            // Ad Image if applicable
+            if let image = image {
+                shareItems.append(image)
+            }
+            
+            let controller = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+            
+            controller.popoverPresentationController?.sourceView = self.view
+            self.present(controller, animated: true, completion: {
+                self.activityIndicator.stopAnimating()
+            })
+        }
     }
 }
 

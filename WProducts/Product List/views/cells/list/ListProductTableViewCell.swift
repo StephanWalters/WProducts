@@ -20,11 +20,11 @@ class ListProductTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var addToCartButton: UIButton!
+    @IBOutlet weak var instockButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.addToCartButton.layer.cornerRadius = 10
+        self.instockButton.layer.cornerRadius = 10
     }
 }
 
@@ -53,6 +53,6 @@ extension ListProductTableViewCell: ProductConfigurationProtocol {
         }
         
         // Set In stock
-        self.addToCartButton.isHidden = !product.inStock
+        self.instockButton.isHidden = !product.inStock
     }
 }
